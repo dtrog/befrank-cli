@@ -4,7 +4,6 @@ set(UPNPC_BUILD_TESTS OFF CACHE BOOL "Build test executables")
 
 add_subdirectory(miniupnpc)
 add_subdirectory(gtest)
-add_subdirectory(boost)
 
 set_property(TARGET upnpc-static gtest gtest_main PROPERTY FOLDER "external")
 
