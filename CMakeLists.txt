@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-project(befrank)
+project(befrank-cli)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_C_STANDARD 11)
 
-set(VERSION "1.0.1-beta.2")
+set(VERSION "2.0.0-beta.1")
 
 include_directories(include src external "${CMAKE_CURRENT_BINARY_DIR}/version")  
 
@@ -80,11 +80,11 @@ if(NOT NO_AES AND NOT ARM AND NOT PPC64LE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes")
 endif()
 
-find_package(Boost 1.58 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options coroutine context atomic)
+find_package(Boost 1.85 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options coroutine context atomic)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ${OLD_LIB_SUFFIXES})
 if(NOT Boost_FOUND)
-  die("Could not find Boost libraries, please make sure you have installed Boost or libboost-all-dev (1.58) or the equivalent")
+  die("Could not find Boost libraries, please make sure you have installed Boost or libboost-all-dev (1.85) or the equivalent")
 elseif(Boost_FOUND)
   message(STATUS "Found Boost Version: ${Boost_VERSION}")
 endif()
