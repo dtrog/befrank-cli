@@ -21,6 +21,8 @@
 #include <functional>
 #include <queue>
 #include <stack>
+#include <cstdint>
+#include <stdexcept>
 
 namespace System {
 

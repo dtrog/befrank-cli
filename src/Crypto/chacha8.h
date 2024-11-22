@@ -45,7 +45,11 @@ namespace Crypto {
     static_assert(sizeof(chacha8_key) <= sizeof(Hash), "Size of hash must be at least that of chacha8_key");
     Hash pwd_hash;
     cn_slow_hash(context, password.data(), password.size(), pwd_hash);
-    memcpy(&key, &pwd_hash, sizeof(key));
+    std::copy(reinterpret_cast<const uint8_t*>(&pwd_hash),
+          reinterpret_cast<const uint8_t*>(&pwd_hash) + sizeof(key),
+          reinterpret_cast<uint8_t*>(&key));
+
+
     memset(&pwd_hash, 0, sizeof(pwd_hash));
   }
 }

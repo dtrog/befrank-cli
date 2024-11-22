@@ -257,7 +257,8 @@ namespace CryptoNote {
     return m_transactions.size();
   }
   //---------------------------------------------------------------------------------
-  void tx_memory_pool::get_transactions(std::list<Transaction>& txs) const {
+  // Example if the function expects a reference to a list of transactions
+  void tx_memory_pool::get_transactions(std::list<CryptoNote::Transaction>& txs) {
     std::lock_guard<std::recursive_mutex> lock(m_transactions_lock);
     for (const auto& tx_vt : m_transactions) {
       txs.push_back(tx_vt.tx);

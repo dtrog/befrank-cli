@@ -23,19 +23,18 @@
 #include "CryptoNoteCore/CryptoNoteSerialization.h"
 
 namespace CryptoNote {
+  void CryptoNote::KeysStorage::serialize(ISerializer& serializer, const std::string& name) {
+    serializer.beginObject(name);
 
-void KeysStorage::serialize(ISerializer& serializer, const std::string& name) {
-  serializer.beginObject(name);
+    serializer(creationTimestamp, "creation_timestamp");
 
-  serializer(creationTimestamp, "creation_timestamp");
+    serializer(spendPublicKey, "spend_public_key");
+    serializer(spendSecretKey, "spend_secret_key");
 
-  serializer(spendPublicKey, "spend_public_key");
-  serializer(spendSecretKey, "spend_secret_key");
+    serializer(viewPublicKey, "view_public_key");
+    serializer(viewSecretKey, "view_secret_key");
 
-  serializer(viewPublicKey, "view_public_key");
-  serializer(viewSecretKey, "view_secret_key");
-
-  serializer.endObject();
-}
+    serializer.endObject();
+  }
 
 }

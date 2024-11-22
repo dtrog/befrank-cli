@@ -21,7 +21,7 @@
 #include <functional>
 #include <system_error>
 #include <vector>
-
+#include <memory>
 #include "Crypto/crypto.h"
 #include "CryptoNoteCore/CryptoNoteBasic.h"
 #include "CryptoNoteProtocol/CryptoNoteProtocolDefinitions.h"

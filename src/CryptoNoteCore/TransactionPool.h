@@ -18,6 +18,7 @@
 #pragma once
 
 #include <set>
+#include <list>
 #include <unordered_map>
 #include <unordered_set>
 
@@ -112,7 +113,8 @@ namespace CryptoNote {
 
     bool fill_block_template(Block &bl, size_t median_size, size_t maxCumulativeSize, uint64_t already_generated_coins, size_t &total_size, uint64_t &fee);
 
-    void get_transactions(std::list<Transaction>& txs) const;
+// Example if the function expects a reference to a list of transactions
+    void get_transactions(std::list<CryptoNote::Transaction>& txs);
     void get_difference(const std::vector<Crypto::Hash>& known_tx_ids, std::vector<Crypto::Hash>& new_tx_ids, std::vector<Crypto::Hash>& deleted_tx_ids) const;
     size_t get_transactions_count() const;
     std::string print_pool(bool short_format) const;

@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.0.0)
 
 project(befrank-cli)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 17)
 
 set(VERSION "2.0.0-beta.1")
 
@@ -44,21 +44,15 @@ if(MSVC)
   include_directories(SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/src/platform/msc)
 else()
   include(TestCXXAcceptsFlag)
-  set(WARNINGS "-Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings -Werror\
+  set(WARNINGS "-Wall -Wextra -Wpointer-arith -Wundef -Wvla -Wwrite-strings\
     -Wno-error=delete-non-virtual-dtor\
     -Wno-error=extra\
-    -Wno-error=unused-function\
-    -Wno-error=unused-private-field\
     -Wno-error=deprecated-declarations\
     -Wno-error=sign-compare\
     -Wno-error=strict-aliasing\
     -Wno-error=type-limits\
-    -Wno-unused-parameter\
-    -Wno-error=unused-variable\
-    -Wno-error=undef\
-    -Wno-error=uninitialized\
-    -Wno-error=unused-result -Wno-unused-lambda-capture")
-endif()
+    -Wno-error=undef")
+    endif()
 
 
 set(C_WARNINGS "-Waggregate-return -Wnested-externs -Wold-style-definition -Wstrict-prototypes")
@@ -80,7 +74,7 @@ if(NOT NO_AES AND NOT ARM AND NOT PPC64LE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -maes")
 endif()
 
-find_package(Boost 1.85 QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options coroutine context atomic)
+find_package(Boost QUIET REQUIRED COMPONENTS system filesystem thread date_time chrono regex serialization program_options coroutine context atomic)
 
 set(CMAKE_FIND_LIBRARY_SUFFIXES ${OLD_LIB_SUFFIXES})
 if(NOT Boost_FOUND)

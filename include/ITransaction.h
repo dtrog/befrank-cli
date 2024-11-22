@@ -21,7 +21,7 @@
 #include <cstdint>
 #include <string>
 #include <vector>
-
+#include <memory>
 #include "CryptoNote.h"
 
 namespace CryptoNote {

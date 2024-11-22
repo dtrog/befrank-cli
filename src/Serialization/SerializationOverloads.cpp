@@ -18,7 +18,7 @@
 #include "Serialization/SerializationOverloads.h"
 
 #include <limits>
-
+#include <stdexcept>
 namespace CryptoNote {
 
 void serializeBlockHeight(ISerializer& s, uint32_t& blockHeight, Common::StringView name) {
