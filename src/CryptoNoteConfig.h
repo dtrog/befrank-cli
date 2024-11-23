@@ -33,9 +33,9 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 
 // MONEY_SUPPLY - total number coins to be generated
 const uint64_t MONEY_SUPPLY                                  = UINT64_C(10000000000000);
-const uint64_t RESERVE_FUND                                  = UINT64_C(2000000000000);
+const uint64_t RESERVE_FUND                                  = UINT64_C(500000000000);
 const size_t CRYPTONOTE_COIN_VERSION                         = 1;
-const unsigned EMISSION_SPEED_FACTOR                         = 18;
+const unsigned EMISSION_SPEED_FACTOR                         = 19;
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
@@ -44,7 +44,7 @@ const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 1000000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 100000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 11;
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 8;
 const uint64_t MINIMUM_FEE                                   = UINT64_C(1);
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(1);
 
@@ -138,36 +138,7 @@ struct CheckpointData {
   const char* blockId;
 };
 
-const std::initializer_list<CheckpointData> CHECKPOINTS = {
-	{	       1, "2a9c2d3e4e8f00ed29b8c8ee2c34212bc932547d079ce39924a31ed22726b91c" },
-	{	       2, "4e216dd8f98369bad6196c3219ffaf0659a6603d7679f67654dcf499c9368f0f" },
-	{	       3, "e1b3f21b1382436b4f5dbb042a314f686e435df6152f0e08f073affcf166b895" },
-	{	     100, "15bd06a8670c71dbbadfa701794b9a24f49f4c42f533597e98893c3f781603b3" },
-	{	     500, "19fdafd1116eb327999db012c7cd1cdbca5385105a3aaeef24467f9dee2c7502" },
-	{	    1000, "9930bf2d319a2aff24bb80e9db88f5fd6357e1c0448f34fa7aec20db97e75d13" },
-	{       2000, "a6c56b7e1e4fbc4131bf182c6712ebf3caea29386d1306bb1750c6b3a61f282e" },
-	{	    5000, "4b9bb365ee89cc5cb9ca7fdd9f2ed70ffcdf3d7998ae6f49dcd007e4257a1685" },
-	{       8800, "0e61f5d84e0d1dbe09b58fa2e9e5df0fb415ab0c979965cc3b293f9992943a2e" },
-	{       9000, "ee80e46cfcb9d02c4fde597b613beb05516a712b3998bb080a3aa8adc5adef23" },
-	{      10000, "97c327e6581ecab11cee3e743a597fa725476b9efeebcda884a174f72f643832" },
-	{      12500, "b8d8eb3b64e5aba708d6e81bc10021dc38e41c1d9a090f4471fa62595fd01b02" },
-	{      15000, "6c17c197d16df481202f072844d358a06d57b5d462634b419486b6dace8fc6e7" },
-	{      17500, "caaa3de7583b995667bdd960bb22902bf527eafa0b77a549baeb0c20ec51d7dd" },
-	{      20000, "207f960bbdf19a53bd79d411ccce96b60c515b6802d0a1d03467eacee4bbcfb4" },
-	{      22500, "157e2f894a6d0e87233e47d4f733b46f2e14af2686da9f2632ea2c8c93cee07a" },
-	{      25000, "3c4a4068dc2a0ddc2e59093408d711e68a0a6c85bec1ddf33ce77af36e56f502" },
-	{      27500, "a46967209e8f8cb316687543648747bf929fe22e3ffe4b094b1c6196f0b42f17" },
-	{      30000, "a84942d3382d70f311228c4dbaa58b46096497c0fdbe2694c6da947caa270c41" },
-	{      31000, "482b6af4a391f6063203ee07c4be538d2b403f6d063e0943b680f6b0bab0806c" },
-	{      31489, "f6adb5f2a4322405c3703463a1428859e409ccec28e9011c2eb374b07cdb7a69" },
-	{	   48744, "4347c3477dbc3bcfba13e98dce8c43ef778011fbf7147e88f5b62dd7b5273e47" },
-    {      50000, "ae6e254c5cac40e58a0bff173dda1e3501f1050e980977ef133127b733f5827f" },
-    {      55000, "71341a68cef034542a9beac6524a148c84a7a61b1a5d19be95ad3e6ab0de3397" },
-    {      59000, "39d923d5cfce2a8fa689cebd9a343b1a88e42f668b1f64c9dfd92caba581adf6" },
-    {      60469, "643c36d2f46d602696e2083dff58f1d01b06ae11cec4f2616792b68ce265a9b5" },
-    {      64452, "84a4581bf2e2a08f08667fea1a672ea8e9f40cf8cfdfbae70a790a7db72f16b9" },
-	{	  155858, "a23aa2e163c7099bbfdfb157a34423f8e48d96a341ce7761dffbf1f57ba12316" }
-};
+const std::initializer_list<CheckpointData> CHECKPOINTS = {};
 
 } // CryptoNote
 
