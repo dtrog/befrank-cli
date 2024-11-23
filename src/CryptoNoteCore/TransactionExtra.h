@@ -20,6 +20,8 @@
 #include <vector>
 #include <boost/variant.hpp>
 
+#include <algorithm>
+
 #include <CryptoNote.h>
 
 #define TX_EXTRA_PADDING_MAX_COUNT          255
