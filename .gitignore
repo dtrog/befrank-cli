@@ -6,4 +6,5 @@
 .ycm_extra_conf.pyc
 Release
 Debug
-./vscode
+.vscode
+.vscode/settings.json
