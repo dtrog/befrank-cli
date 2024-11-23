@@ -195,10 +195,6 @@ namespace CryptoNote {
 			return false;
 		}
 
-		if (height == 1) {
-			blockReward = CryptoNote::parameters::RESERVE_FUND;
-		}
-
 		std::vector<uint64_t> outAmounts;
 		decompose_amount_into_digits(blockReward, m_defaultDustThreshold,
 			[&outAmounts](uint64_t a_chunk) { outAmounts.push_back(a_chunk); },
